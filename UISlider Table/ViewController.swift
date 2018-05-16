@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
+    @IBOutlet weak var myLabel: UILabel!
+    
     @IBOutlet weak var mySlider: UISlider!
     @IBOutlet weak var myTableView: UITableView!
     

@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2hb-7l-prv">
-                                <rect key="frame" x="0.0" y="109" width="375" height="558"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2hb-7l-prv">
+                                <rect key="frame" x="0.0" y="164" width="375" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RE" textLabel="cnr-Dc-CUV" style="IBUITableViewCellStyleDefault" id="kqo-TF-5K3">
@@ -42,18 +41,42 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1vQ-Jb-5yj">
-                                <rect key="frame" x="31" y="48" width="313" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1vQ-Jb-5yj">
+                                <rect key="frame" x="31" y="40" width="313" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="309" id="EvQ-Af-Yfk"/>
+                                    <constraint firstAttribute="height" constant="30" id="gxP-ac-7DL"/>
+                                </constraints>
                                 <connections>
                                     <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="5uF-Wb-OMI"/>
                                 </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmY-rA-PSO">
+                                <rect key="frame" x="166.5" y="107" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="DqT-Nm-hao"/>
+                                    <constraint firstAttribute="height" constant="21" id="ueq-qR-B0K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OmY-rA-PSO" firstAttribute="top" secondItem="1vQ-Jb-5yj" secondAttribute="bottom" constant="37" id="L2V-ZD-bm8"/>
+                            <constraint firstItem="2hb-7l-prv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mwq-Ys-TD3"/>
+                            <constraint firstItem="1vQ-Jb-5yj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="i2x-fa-Vie"/>
+                            <constraint firstItem="2hb-7l-prv" firstAttribute="top" secondItem="OmY-rA-PSO" secondAttribute="bottom" constant="36" id="iec-Gf-Ysq"/>
+                            <constraint firstItem="2hb-7l-prv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qpf-fP-KKa"/>
+                            <constraint firstItem="OmY-rA-PSO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wBi-3C-8l1"/>
+                            <constraint firstItem="2hb-7l-prv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="y3w-em-zFT"/>
+                            <constraint firstItem="1vQ-Jb-5yj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yuX-Wd-fxk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="myLabel" destination="OmY-rA-PSO" id="7OH-8R-7Cd"/>
                         <outlet property="mySlider" destination="1vQ-Jb-5yj" id="MpK-H6-0Vc"/>
                         <outlet property="myTableView" destination="2hb-7l-prv" id="cLF-16-2Ln"/>
                     </connections>
